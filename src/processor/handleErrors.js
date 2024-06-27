@@ -64,7 +64,7 @@ module.exports = {
           "RETRY-CREATE",
           null,
           message.blockchain,
-          JSON.stringify(message.asset_data),
+          message.asset_data,
           null,
           message.epochs,
         ];

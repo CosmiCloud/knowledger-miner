@@ -53,10 +53,6 @@ module.exports = {
         (obj) => obj.public_key == data.approver
       );
 
-      console.log(
-        `${wallet_array[index].name} wallet ${wallet_array[index].public_key}: Retrying creation on ${data.blockchain}.`
-      );
-
       if (
         (data.blockchain === "otp:20430" ||
           data.blockchain === "gnosis:10200") &&

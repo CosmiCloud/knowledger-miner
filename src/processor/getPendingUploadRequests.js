@@ -18,7 +18,7 @@ module.exports = {
       let pending_requests = [];
       for (let dkg_blockchain of dkg_blockchains) {
         query =
-          "select txn_id,progress,approver,blockchain,asset_data,epochs,updated_at,created_at FROM asset_header WHERE progress = ? AND blockchain = ? ORDER BY created_at ASC LIMIT 1";
+          "select txn_id,progress,approver,blockchain,asset_data,epochs,updated_at,created_at FROM asset_header WHERE progress = ? AND blockchain = ? ORDER BY created_at ASC LIMIT 5";
         params = ["PENDING", dkg_blockchain.name];
         let request = await queryDB
           .getData(query, params)

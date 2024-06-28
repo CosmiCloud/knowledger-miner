@@ -82,9 +82,9 @@ module.exports = {
       );
       await sleep(60000);
 
-      query = `UPDATE txn_header SET progress = ?, approver = ? WHERE approver = ? AND progress = ? AND blockchain = ?`;
+      query = `UPDATE asset_header SET progress = ?, approver = ? WHERE approver = ? AND progress = ? AND blockchain = ?`;
       params = [
-        "PENDING",
+        "RETRY-CREATE",
         null,
         paranet_workers[message.index].public_key,
         "PROCESSING",

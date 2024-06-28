@@ -87,7 +87,11 @@ module.exports = {
           }
 
           if (last_processed[4]) {
-            if (last_processed[4].progress === "RETRY-CREATE") {
+            if (last_processed[0].progress === "RETRY-CREATE" && 
+                last_processed[1].progress === "RETRY-CREATE" && 
+                last_processed[2].progress === "RETRY-CREATE" && 
+                last_processed[3].progress === "RETRY-CREATE" && 
+                last_processed[4].progress === "RETRY-CREATE") {
               console.log(
                 `${worker.name} ${worker.public_key}: Create attempt failed 3 times. Abandoning creation...`
               );
@@ -123,7 +127,7 @@ module.exports = {
             continue;
           }
 
-          //not processing, not transfering, not retrying transfer
+          //not processing, not retrying
           if (last_processed[0].progress !== "PROCESSING") {
             available_workers.push(worker);
           }

@@ -37,7 +37,7 @@ module.exports = {
   retryTransfer: async function retryTransfer(data) {
     try {
       let query = `UPDATE txn_header SET progress = ? WHERE txn_id = ?`;
-      let params = ["RETRYING-CREATE", data.txn_id];
+      let params = ["RETRY-CREATE", data.txn_id];
       await queryDB
         .getData(query, params)
         .then((results) => {
@@ -138,7 +138,6 @@ module.exports = {
           return result;
         })
         .catch(async (error) => {
-          console.log(error);
           error_obj = {
             error: error.message,
             index: index,

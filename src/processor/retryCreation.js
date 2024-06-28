@@ -34,7 +34,7 @@ const testnet_dkg = new DKGClient(testnet_node_options);
 const mainnet_dkg = new DKGClient(mainnet_node_options);
 
 module.exports = {
-  retryTransfer: async function retryTransfer(data) {
+  retryCreation: async function retryCreation(data) {
     try {
       let query = `UPDATE txn_header SET progress = ? WHERE txn_id = ?`;
       let params = ["RETRY-CREATE", data.txn_id];
@@ -54,7 +54,7 @@ module.exports = {
       );
 
       console.log(
-        `${wallet_array[index].name} wallet ${wallet_array[index].public_key}: Retrying transfer for UAL ${data.ual} on ${data.blockchain}.`
+        `${wallet_array[index].name} wallet ${wallet_array[index].public_key}: Retrying creation on ${data.blockchain}.`
       );
 
       if (

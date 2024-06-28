@@ -99,10 +99,10 @@
     {
       "enabled": "true",
       "name": "Base Testnet",
-      "chain_id": "84531",
+      "chain_id": "84532",
       "block_time_sec": "12",
-      "rpc": "https://base-goerli.public.blastapi.io",
-      "explorer": "https://goerli.basescan.org/",
+      "rpc": "https://sepolia.base.org",
+      "explorer": "https://sepolia.basescan.org/",
       "network": "testnet"
     }
   ],
